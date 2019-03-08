@@ -1,0 +1,849 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding:0;
+margin:0;
+/*   font-family: 'Spectral SC', serif; */
+  font-family: 'Rubik', sans-serif;
+  color:#727271;
+  position: relative;
+  background: url(../images/gray.svg) no-repeat right top fixed ;
+  background-size: cover;
+
+
+}
+ul {
+  padding: 0;
+}
+
+a {
+  color:#727271;
+  text-decoration: none;
+
+}
+ul {
+  margin:0;
+}
+
+
+
+/************
+  Header
+************/
+
+header {
+  margin:0;
+  padding:0;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+
+
+}
+header .menu-top {
+font-family: 'Spectral SC', serif;
+background-color: #fff;
+padding:20px 0% 0 5%;
+width:100%;
+display: flex;
+justify-content: space-between;
+
+}
+header .menu-top .hamburgerMenu a {
+  height: 20px;
+  display: block;
+   align-self: center;
+   padding-top:15px;
+
+}
+header .menu-top .hamburgerMenu a span {
+  width:30px;
+  height: 2px;
+  background-color: #727271;
+
+   position: relative;
+   display: block;
+
+
+
+
+}
+#menuMobil {
+  height: calc(100vh - 60px);
+  top:60px;
+  left:-200%;
+   min-width: 100%;
+  background-color: rgba(255, 255, 255, 0.84);
+  position: absolute;
+  z-index: 1;
+  transition: all 0.5s;
+
+
+}
+#menuMobil .mobilNav {
+
+  width: 100%;
+  padding-top:20px;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  margin-bottom: 40px;
+
+}
+#menuMobil .mobilNav li {
+  padding:10px 0px;
+  list-style-type: none;
+
+}
+#menuMobil .mobilNav li a {
+  display: block;
+  margin:0 auto;
+  max-width: 150px;
+  font-weight: 600
+}
+#menuMobil .socialMenu {
+  display: flex;
+  justify-content: space-around;
+}
+#menuMobil .socialMenu li {
+
+  list-style-type: none;
+}
+
+header .menu-top .hamburgerMenu {
+  display: none;
+}
+
+
+header .menu-top .hamburgerMenu a span::after ,header .menu-top .hamburgerMenu a span::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #727271;
+  position: absolute;
+  left:0;
+}
+header .menu-top .hamburgerMenu a span::after {
+  bottom:-5px;
+}
+header .menu-top .hamburgerMenu a span::before {
+  top:-5px;
+}
+header .menu-top .hamburgerMenu #hambBtnClose {
+  display: none;
+}
+header .menu-top .hamburgerMenu #hambBtnClose span:last-child::after ,header .menu-top .hamburgerMenu #hambBtnClose span:last-child::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #727271;
+  position: absolute;
+  left:0;
+
+}
+header .menu-top .hamburgerMenu #hambBtnClose span:last-child::after {
+ transform: translate(0px,0);
+ top:5px;
+ animation: rotafter .3s forwards ease-in;
+
+}
+@keyframes  rotafter {
+  to { transform: translate(-5px,0);
+}
+}
+
+header .menu-top .hamburgerMenu #hambBtnClose span:last-child::before {
+  transform: translate(0px,0);
+  top:-5px;
+  animation: rotbefore .3s forwards ease-in;
+
+
+
+}
+@keyframes  rotbefore {
+  to {
+    transform: translate(5px,0);
+    }
+}
+
+header .menu-top ul {
+
+display: flex;
+
+}
+header .menu-top ul li {
+  list-style-type: none;
+  padding: 0 10px;
+}
+header .menu-top .lang {
+  width: 100%;
+  max-width: 60px;
+  position: relative;
+}
+header .menu-top .lang::after{
+  content: "";
+  display: block;
+  width:110%;
+  height: 1px;
+  border-radius: 10px;
+  background-color: #727271;
+  position: absolute;
+  transform: rotate(-45deg);
+  top:5px;
+  left:-5px;
+}
+header .menu-top .lang a {
+  display: block;
+  width: 100%;
+  margin-top:-10px;
+  font-size: 14px;
+
+}
+header .menu-top .lang a:first-child {
+  margin-bottom:5px;
+  text-align: left;
+}
+header .menu-top .lang a:last-child {
+  text-align: right;
+  padding-right: 5px;
+}
+header .menu-right {
+  position: absolute;
+  top:60px;
+  padding-top:20px;
+  right:0;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+
+}
+header .menu-right .socialMenu {
+  padding:0;
+}
+header .menu-right .socialMenu li {
+
+  display: block;
+  padding:20px 0;
+  margin-top:100%;
+
+
+
+}
+header .menu-right .socialMenu li:first-child {
+  margin-top:150px;
+
+}
+header .menu-right .socialMenu li a {
+  transform: rotate(90deg);
+  display: block;
+}
+
+
+/************
+  Main
+************/
+
+main {
+  position: relative;
+}
+
+main .slider {
+  position: absolute;
+  z-index: -1;
+  top:0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+main .slider img {
+  height: 100vh;
+  object-fit: cover;
+  width: 100%;
+}
+main .slider .sliderText {
+  position: absolute;
+  z-index: 1;
+  top:20%;
+  width:50%;
+  left:25%;
+  color:#fff;
+  text-align: center;
+
+}
+main .slider .sliderText h1 {
+  font-weight: 300;
+  font-size:50px;
+  animation: textUp 0.4s 0.4s forwards ease-in;
+  transform: translate(0,-50px);
+  opacity: 0;
+}
+@keyframes textUp {
+to {transform: translate(0,0);opacity: 1}
+
+
+}
+
+main .slider .sliderText p {
+  font-size: 20px;
+  font-weight: 300;
+  animation: textleft 0.5s 0.4s forwards ease-in;
+  transform: translate(-50px,0px);
+  opacity: 0;
+}
+@keyframes textleft {
+to {transform: translate(0,0);opacity: 1}
+
+
+}
+
+/************
+  Products Page
+************/
+main .productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding:100px 10%;
+  justify-content:space-around;
+}
+main .productsContainer .productNav {
+  background-color: #fff;
+  padding:20px;
+  border-radius: 10px;
+  width:100%;
+  max-width: 300px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+main .productsContainer .productNav form input {
+	display: block;
+	margin: 0 auto;
+	border: 2px solid #a8a8a5;
+	border-radius: 5px;
+	font-weight: 500;
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+}
+main .productsContainer .productNav .productMenu {
+  margin-top:50px;
+
+}
+main .productsContainer .productNav .productMenu ul li {
+  list-style-type: none;
+  margin-left:20px;
+  padding:5px 0px;
+}
+main .productsContainer .productNav .productMenu ul li a{
+  display: block;
+
+}
+main .productsContainer .productNav .productMenu ul li a:hover {
+  color:#4e4e4b;
+}
+
+main .productsContainer .productContent {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  width: 70%;
+  padding:40px;
+
+
+}
+main .productsContainer .productContent  .productName h1{
+  margin:0;
+
+}
+main  .productsContainer .productContent .productSubName h2 {
+  font-size:18px;
+  font-weight: 400;
+  margin-top:0;
+  margin-bottom:50px;
+}
+main .productsContainer .productContent  .productBlockName {
+  font-size:20px;
+  font-weight: 500;
+  position: relative;
+}
+main .productsContainer .productContent  .productBlockName::after {
+  width:70%;
+  content:"";
+  height: 2px;
+  background-color: #D8D8D8;
+  position: absolute;
+  right:0;
+  display: block;
+  top:15px
+
+}
+main .productsContainer .productContent .productBlockContent
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+main .productsContainer .productContent .productBlockContent .productSubblock {
+  width:45%;
+  text-align: center;
+  padding:20px 0px;
+  font-size: 16px;
+  margin-top:20px;
+  font-weight: 300;
+}
+main .productsContainer .productContent .productBlockContent .productSubblock hr {
+  border-color: #D8D8D8;
+}
+main .productsContainer .productContent .productBlockContent .productSubblock span {
+  font-weight: 700;
+  margin-bottom:10px;
+}
+main .productsContainer .productContent .productBlockContent  p {
+  font-weight: 300;
+  font-size: 16px;
+}
+main .productsContainer .productContent .productBlockContent  p:nth-child(even) {
+  font-weight: 500;
+}
+main .productsContainer .productNav .productNavContent {
+  display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+
+.infoBlock {
+	font-size: 12px;
+	font-weight: 500;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+	background-color: #fbfbfb;
+}
+
+main .productsContainer .productNavContent #productMenuList { 
+  display:none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  padding:7px;
+  border-radius: 5px;
+  border:solid #4e4e4e 1px;
+  display: none;
+
+
+  }
+
+  /************
+    News Page
+  ************/
+  .newsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding:100px 10%;
+
+  }
+  .newsContainer .newsContent {
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 300px;
+    background-color: #fff;
+    margin-bottom:50px;
+    display: flex;
+    flex-wrap: wrap;
+
+
+  }
+  .newsContainer .newsContent .newsContentText {
+    width: calc(70% - 20px);
+    min-height: 250px;
+    margin-top:20px;
+    margin-left:20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+  }
+    .newsContainer .newsContent .newsContentText .newsContentTextContent {
+      width: 100%;
+    }
+
+  .newsContainer .newsContent .newsContentImg {
+    width:30%;
+    min-height: 250px;
+    display: flex;
+    background-position: center;
+    background-size: cover;
+
+
+
+
+  }
+  .newsContainer .newsContent .newsContentImg img {
+    width: 100%;
+    height: auto;
+     align-self: center;
+  }
+  .newsContainer .newsContent .newsContentInfo {
+    width:100%;
+    height: 20px;
+    align-self: flex-end;
+    margin-bottom:10px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  /************
+    Contact Page
+  ************/
+  .contactContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:100px 5%;
+
+     height: 100%;
+  }
+  .contactContainer .sutun {
+    width:45%;
+    min-height:300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0 ,0,  0, 0.3);
+    padding:20px;
+
+  }
+  .contactContainer .mapContainer {
+    width:100%;
+    height: 300px;
+    background-color: #fff;
+    margin-top:50px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0 ,0,  0, 0.3);
+
+
+  }
+  .contactContainer .mapContainer  iframe {
+    width:100% !important;
+    height: 300px !important;
+
+  }
+  .wpcf7-form-control.wpcf7-text {
+	width: 100%;
+	padding: 10px;
+	font-size: 14px;
+	color: #727271;
+
+}
+.singlePageContainer {
+  margin:150px 10%;
+  padding:20px;
+  border-radius: 10px;
+  background-color: #fff;
+
+}
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+
+
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  main .productsContainer .productNavContent #productMenuList { 
+    display: block;
+    display: block;
+  }
+  main .productsContainer .productNav {
+
+    width: 80%;
+    max-width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    z-index: 1;
+  }
+  main .productsContainer .productNav form {
+    width: 70%;
+  }
+    main .productsContainer .productNav input {
+    width:100% !important;
+
+    }
+  main #productsMenu {
+  height: 50px;
+  overflow: scroll;
+  margin-top:30px;
+  }
+  main #productsMenu ul {
+    overflow: auto;
+    height: 300px;
+
+  }
+  main .productsContainer .productContent {
+
+  width: 100%;
+  padding: 40px;
+  margin-top:170px;
+
+
+  }
+
+
+
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  main .productsContainer .productNavContent #productMenuList { 
+    display: block;
+    display: block;
+}
+  main .productsContainer .productNav {
+
+  	width: 80%;
+  	max-width: 100%;
+  	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    z-index: 1;
+  }
+  main .productsContainer .productNav form {
+    width: 70%;
+  }
+    main .productsContainer .productNav input {
+    width:100% !important;
+
+    }
+  main #productsMenu {
+  height: 50px;
+  overflow: scroll;
+  margin-top:30px;
+}
+  main #productsMenu ul {
+    overflow: auto;
+    height: 300px;
+
+  }
+  main .productsContainer .productContent {
+
+	width: 100%;
+	padding: 40px;
+  margin-top:170px;
+
+
+}
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  main .productsContainer .productNavContent #productMenuList { 
+    display: block;
+    display: block;
+  }
+  main .productsContainer .productNav {
+
+    width: 80%;
+    max-width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    z-index: 1;
+  }
+  main .productsContainer .productNav form {
+    width: 70%;
+  }
+    main .productsContainer .productNav input {
+    width:100% !important;
+
+    }
+  main #productsMenu {
+  height: 50px;
+  overflow: scroll;
+  margin-top:30px;
+  }
+  main #productsMenu ul {
+    overflow: auto;
+    height: 300px;
+
+  }
+  main .productsContainer .productContent {
+
+  width: 100%;
+  padding: 40px;
+  margin-top:170px;
+
+
+  }
+
+
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  header .menu-top ul ,header .menu-right {
+    display:none;
+  }
+  header .menu-top .hamburgerMenu {
+    display: block;
+  }
+  main .slider .sliderText {
+  	position: absolute;
+  	z-index: 1;
+  	top: 10%;
+  	width: 80%;
+  	left: 10%;
+  	color: #fff;
+  	text-align: center;
+  }
+  main .productsContainer .productNavContent #productMenuList { 
+    display: block;
+    display: block;
+}
+  main .productsContainer .productNav {
+
+  	width: 80%;
+  	max-width: 100%;
+  	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    z-index: 1;
+  }
+  main .productsContainer .productNav form {
+    width: 70%;
+  }
+    main .productsContainer .productNav input {
+    width:100% !important;
+
+    }
+  main #productsMenu {
+  height: 50px;
+  overflow: scroll;
+  margin-top:30px;
+}
+  main #productsMenu ul {
+    overflow: auto;
+    height: 300px;
+
+  }
+  main .productsContainer .productContent {
+
+	width: 100%;
+	padding: 40px;
+  margin-top:250px;
+
+
+}
+
+
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+header .menu-top ul ,header .menu-right {
+  display:none;
+}
+header .menu-top .hamburgerMenu {
+  display: block;
+}
+main .slider .sliderText {
+	position: absolute;
+	z-index: 1;
+	top: 10%;
+	width: 80%;
+	left: 10%;
+	color: #fff;
+	text-align: center;
+}
+main .productsContainer {
+  padding: 100px 10px;
+}
+main .productsContainer .productNavContent #productMenuList { 
+  display: block;
+  display: block;
+}
+main .productsContainer .productNav {
+
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 1;
+  top:120px
+}
+main .productsContainer .productNav form {
+  width: 70%;
+}
+  main .productsContainer .productNav input {
+  width:100% !important;
+
+  }
+main #productsMenu {
+height: 50px;
+overflow: scroll;
+margin-top:30px;
+}
+main #productsMenu ul {
+  overflow: auto;
+  height: 300px;
+
+}
+main .productsContainer .productContent {
+
+width: 100%;
+padding: 10px;
+margin-top:210px;
+
+
+}
+main .productsContainer .productContent .productBlockName::after {
+	width: 55%;
+
+}
+main .productsContainer .productContent .productBlockName {
+  margin-bottom:20px;
+}
+main .productsContainer .productContent .productBlockContent {
+	margin-bottom: 20px;
+}
+main .productsContainer .productContent .productBlockContent .productSubblock {
+	width: 100%;
+
+	padding: 20px 20px;
+
+}
+
+
+
+
+
+}
